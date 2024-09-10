@@ -1,6 +1,4 @@
-// require ("dotenv").config({path:'./env'})
 import dotenv from "dotenv"
-
 
 //you can write database connection in two ways but the preferred way is to write it in the db folder for better understanding
 // const app=express()
@@ -27,6 +25,12 @@ dotenv.config({
     path:'./env'
 })
 
-
 import connectDB from "./db/index.js";
+import app from "./app.js"
 connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 3000,()=>{
+        console.log(`App is listening on port:${process.env.PORT}`)
+        
+    })
+})
