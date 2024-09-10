@@ -51,7 +51,7 @@ ref:"Video"
 userSchema.pre("save", async function(next){
 if(!this.isModified("password")) return next()
 
-    this.password=bcrypt.hash(this.password,10)
+    this.password= await bcrypt.hash(this.password,10)
     next()
 })// careful not to use arrow function here since it does not support this keyword
 
