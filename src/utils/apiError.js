@@ -10,6 +10,8 @@ class apiError extends Error{
         this.message=message
         this.success=false;
         this.data=null
-        this.errors=errors
+        this.error=error
     }
 }
+
+export {apiError}

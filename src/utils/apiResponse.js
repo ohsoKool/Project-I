@@ -5,3 +5,5 @@ class apiResponse{
         this.message=message<400
     }
 }
+
+export default apiResponse
